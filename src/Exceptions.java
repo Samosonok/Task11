@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class Exceptions {
 
     static int[] array;
-    static double index;
-    static double num1;
-    static double num2;
+    static int num1;
+    static int num2;
     static double result;
 
     public static void main(String[] args) {
         getArray();
-        index = getIndex(array);
+        num1 = getNumber(array);
+        num2 = getNumber(array);
     }
 
     public static void getArray() {
@@ -25,9 +25,9 @@ public class Exceptions {
         }
     }
 
-    public static double getIndex(int[] array) {
+    public static int getNumber(int[] array) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select a number from the array by index: " + Arrays.toString(array));
-        return scanner.nextDouble();
+        return array[scanner.nextInt()];
     }
 }
