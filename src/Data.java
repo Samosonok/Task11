@@ -1,6 +1,11 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * @author Samosonok Liliia
+ * @version 1.0
+ */
+
 public class Data {
 
     public static int getSize() {

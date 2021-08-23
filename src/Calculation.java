@@ -1,3 +1,9 @@
+
+/**
+ * @author Samosonok Liliia
+ * @version 1.0
+ */
+
 public class Calculation {
 
     public static int getDivisionResult(int num1, int num2){

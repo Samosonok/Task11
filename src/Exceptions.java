@@ -1,3 +1,9 @@
+
+/**
+ * @author Samosonok Liliia
+ * @version 1.0
+ */
+
 public class Exceptions {
 
     static int size;
