@@ -8,22 +8,22 @@ public class Data {
         System.out.println("Enter array length:");
         try {
             Exceptions.size = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException size) {
-            System.out.println("NumberFormatException");
+            return Exceptions.size;
+        } catch (NumberFormatException e) {
+            System.out.println("You entered not a number!");
             return getSize();
         }
-        return Exceptions.size;
     }
 
     public static int[] getArray() {
         Exceptions.array = new int[Exceptions.size];
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Insert array elements:");
+        System.out.println("Enter array elements:");
         for (int count = 0; count < Exceptions.size; count++) {
             try {
                 Exceptions.array[count] = Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException array) {
-                System.out.println("NumberFormatException");
+            } catch (NumberFormatException e) {
+                System.out.println("You entered not a number!");
                 return getArray();
             }
         }
@@ -32,14 +32,19 @@ public class Data {
 
     public static int getNumber(int[] array) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Select a number from the array by index: "
+        System.out.println("Select a number from the array by index " +
+                "(1st number - index 0, 2nd - index 1...)\n"
                 + Arrays.toString(array));
         try {
             Exceptions.index = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException size) {
-            System.out.println("NumberFormatException");
+            return Exceptions.array[Exceptions.index];
+        } catch (NumberFormatException e) {
+            System.out.println("You entered not a number!");
             return getNumber(array);
         }
-        return Exceptions.array[Exceptions.index];
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndex Out Of Bounds!");
+            return getNumber(array);
+        }
     }
 }

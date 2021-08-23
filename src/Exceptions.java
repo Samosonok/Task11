@@ -14,6 +14,8 @@ public class Exceptions {
         num2 = Data.getNumber(array);
         System.out.println("You chose numbers: " + num1 + " and " + num2);
         result = Calculation.getDivisionResult(num1, num2);
-        System.out.println("Result of dividing these numbers: " + result);
+        if (num2 != 0) {
+            System.out.println("Result of dividing these numbers: " + result);
+        }
     }
 }
